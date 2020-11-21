@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>Tour de magie</title>
+ <meta charset="utf-8" />
+ <link rel="stylesheet" href="../style/github.css">
+ <link rel="stylesheet" href="../style/compteur.css">
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+ <script>
+  if(!window.jQuery){
+   document.write('<script src="../script/jquery-3.5.1.min.js"><\/script>');
+  }
+ </script>
+ <script src="../script/compteur.js"></script>
+</head>
+<body>
+ <div id="div_compter_wrapper">
+   <div class="div_compteur_ext" id="dec">
+     <h1>décimal</h1>
+     <div class="div_compteur_int">
+       <input class="n3" value="0" accept="[0-9]" />
+       <input class="n2" value="0" accept="[0-9]" />
+       <input class="n1" value="0" accept="[0-9]" />
+       <input class="n0" value="0" accept="[0-9]" />
+     </div>
+     <div class="div_buttons">
+       <button class="plus">+</button>
+       <button class="minus">-</button>
+       <button class="reset">0</button>
+     </div>
+   </div>
+   <div class="div_compteur_ext" id="bin">
+     <h1>binaire</h1>
+     <div class="div_compteur_int">
+       <input class="n3" value="0" accept="[01]" />
+       <input class="n2" value="0" accept="[01]" />
+       <input class="n1" value="0" accept="[01]" />
+       <input class="n0" value="0" accept="[01]" />
+     </div>
+     <div class="div_buttons">
+       <button class="plus">+</button>
+       <button class="minus">-</button>
+       <button class="reset">0</button>
+     </div>
+   </div>
+   <div class="div_compteur_ext" id="hex">
+     <h1>hexadécimal</h1>
+     <div class="div_compteur_int">
+       <input class="n3" value="0" accept="[0-9A-Fa-f]" />
+       <input class="n2" value="0" accept="[0-9A-Fa-f]" />
+       <input class="n1" value="0" accept="[0-9A-Fa-f]" />
+       <input class="n0" value="0" accept="[0-9A-Fa-f]" />
+     </div>
+     <div class="div_buttons">
+       <button class="plus">+</button>
+       <button class="minus">-</button>
+       <button class="reset">0</button>
+     </div>
+   </div>
+ </div>
+</body>
+</html>
