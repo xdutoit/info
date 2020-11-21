@@ -1,12 +1,12 @@
 $(function(){
-  // button event listeners
+  // boutons
   $('.plus').click(1,changeVal);
   $('.minus').click(-1,changeVal);
   $('.reset').click(reset);
 })
 
-radix_list = {'dec':10,'bin':2,'hex':16}
-counter_size = 4
+var radix_list = {'dec':10,'bin':2,'hex':16};
+var counter_size = 4;
 
 /* principe de base: tout est converti en décimal, puis modifié, puis retourné dans la base d'origine */
 
