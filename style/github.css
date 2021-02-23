@@ -1,5 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;1,400&family=Open+Sans&display=swap');
+
 body{
- font-family: 'Verdana', sans-serif;
+ font-family: 'Montserrat', sans-serif;
+}
+textarea{
+	font-family: 'Montserrat', sans-serif;
 }
 h1{
  border-bottom: 1px solid black;
@@ -8,6 +13,10 @@ h1{
  width: 800px;
  margin: 0 auto;
 }
+#main_container>div{
+ margin-bottom: 50px;
+ text-align: center;
+}
 a{
  text-decoration: none;
  font-weight: bold;
@@ -15,4 +24,12 @@ a{
 }
 a:hover{
  text-decoration: underline;
+}
+button{
+	padding: .1em 1em;
+	border-radius: 1em;
+	border: 1px solid #000;
+}
+button:hover{
+	background-color: #ccc;
 }

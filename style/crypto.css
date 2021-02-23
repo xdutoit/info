@@ -1,0 +1,24 @@
+.clair{
+	color: #00b894;
+
+}
+.crypte{
+	color: #e17055;
+}
+.fond_clair{
+	background-color: #00b89466;
+
+}
+.fond_crypte{
+	background-color: #e1705566;
+}
+#alpha_sub table{
+	margin: 0px auto;
+	border-collapse: collapse;
+}
+#alpha_sub td{
+	border: 1px solid black;
+}
+#alpha_sub input{
+	width: 12px;
+}
