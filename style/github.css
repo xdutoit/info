@@ -25,11 +25,3 @@ a{
 a:hover{
  text-decoration: underline;
 }
-button{
-	padding: .1em 1em;
-	border-radius: 1em;
-	border: 1px solid #000;
-}
-button:hover{
-	background-color: #ccc;
-}

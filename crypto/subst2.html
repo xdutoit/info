@@ -18,8 +18,14 @@
 	<div id="main_container">
 		<div><textarea id="ta_in" rows="8" cols="80" class="fond_crypte"></textarea></div>
 		<div id="alpha_sub"><br/>lettres non-assignées:<span id="span_lettres_vides"></span><br/><button id="btn_reset">effacer</button><button id="btn_decrypt">décrypter</button></div>
-		<div><canvas id="cnv_stats_ref" width=600 height=130></canvas></div>
-		<div><canvas id="cnv_stats_txt" width=600 height=130></canvas></div>
+		<div>
+			<span style="font-weight: bold; color:#99f;"> Fréquence des lettres de la langue française</span><br/>
+			<canvas id="cnv_stats_ref" width=600 height=130></canvas>
+		</div>
+		<div>
+			<span style="font-weight: bold; color:#f99;"> Fréquence des lettres du texte à déchiffrer</span><br/>
+			<canvas id="cnv_stats_txt" width=600 height=130></canvas>
+		</div>
 		<div><div id="div_out"></div></div>
 	</div>
 </body>

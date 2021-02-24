@@ -11,6 +11,9 @@ var alphabet = [];
 
 var freq_txt = [];
 
+var txt_stats = [];
+var ref_stats = [];
+
 $(function(){
 	//canvas
 	ctx_ref = $('#cnv_stats_ref')[0].getContext('2d');
@@ -21,10 +24,21 @@ $(function(){
 	ctx_txt.font = 'bold 14px Arial';
 	ctx_txt.textAlign = 'center'
 
-	// dessiner alphabet
+	// créer liste référence
 	for(var i=0;i<26;i++){
-		ctx_txt.fillText(num2car(i).toUpperCase(), bar_W/2+i*(bar_W+bar_SP), cnv_H-10);
-		ctx_ref.fillText(num2car(i), bar_W/2+i*(bar_W+bar_SP), cnv_H-10);
+		ref_stats[i] = {'car':num2car(i), 'n':getFreqRef(i)};
+	}
+	ref_stats.sort(decFreq);
+
+	// créer stats vides
+	for(var i=0;i<26;i++){
+		txt_stats[i] = {'car':num2car(i),'n':0};
+	}
+
+
+	// dessiner alphabet ref
+	for(var i=0;i<26;i++){
+		ctx_ref.fillText(ref_stats[i]['car'], bar_W/2+i*(bar_W+bar_SP), cnv_H-10);
 	}
 
 	// créer tableau alphabet
@@ -32,6 +46,7 @@ $(function(){
 	creerTableau();
 	alphabet = creerAlphabet();
 	dessinerStatsRef();
+	updateInput();
 
 	// input
 	$('.inp_car').on('keyup',updateInput);
@@ -45,6 +60,10 @@ $(function(){
 	$('#btn_decrypt').on('click',decrypter);
 })
 
+function decFreq(a,b){
+	return b['n']-a['n'];
+}
+
 function creerTableau(){
 	html_str1 = '';
 	html_str2 = '';
@@ -57,7 +76,7 @@ function creerTableau(){
 
 function effacerTableau(){
 	$('.inp_car').val('');
-	dessinerStatsTxt();
+	updateInput();
 }
 
 function resetFreqs(){
@@ -75,18 +94,17 @@ function calculerStats(){
 
 		resetFreqs();
 		for(var c=0;c<txt_i.length;c++){
-			var car = txt_i[c];
-			for(var c2=0;c2<26;c2++){
-				if(car.toUpperCase()==alphabet[c2].toUpperCase()){
-					freq_txt[c2]++;
-				}
-			}
+			freq_txt[car2num(txt_i[c])]++;
 		}
 
-		normaliserMax(freq_txt)
+		normaliserMax(freq_txt);
 
-		dessinerStatsTxt()
-		console.log(freq_txt)
+		for(var i=0;i<26;i++){
+			txt_stats[i] = {'car':num2car(i),'n':freq_txt[i]};
+		}
+		txt_stats.sort(decFreq);
+
+		dessinerStatsTxt();
 
 		calcul_en_cours = false;
 	}
@@ -95,19 +113,26 @@ function calculerStats(){
 function dessinerStatsTxt(){
 	// effacer
 	ctx_txt.fillStyle = '#FFFFFF';
-	ctx_txt.fillRect(0,0,cnv_W,bar_H);
+	ctx_txt.fillRect(0,0,cnv_W,cnv_H);
+
+	// alphabet
+	ctx_txt.fillStyle = '#000000';
+	for(var i=0;i<26;i++){
+		console.log('dessine '+txt_stats[i]['car'].toUpperCase())
+		ctx_txt.fillText(txt_stats[i]['car'].toUpperCase(), bar_W/2+i*(bar_W+bar_SP), cnv_H-10);
+	}
 
 	// stats txt
 	ctx_txt.fillStyle = '#FF000033';
 	for(var i=0;i<26;i++){
-		var h = freq_txt[i]*bar_H;
+		var h = txt_stats[i]['n']*bar_H;
 		ctx_txt.fillRect(i*(bar_W+bar_SP),bar_H-h,bar_W,h);
 	}
 
 	// stats ref
 	ctx_txt.fillStyle = '#0000FF33';
 	for(var i=0;i<26;i++){
-		var c = $('#inp_car_'+i).val();
+		var c = $('#inp_car_'+car2num(txt_stats[i]['car'])).val();
 		if(c != ''){
 			var h = freq_ref[car2num(c)]*bar_H;
 			ctx_txt.fillRect(i*(bar_W+bar_SP),bar_H-h,bar_W,h);
@@ -117,9 +142,18 @@ function dessinerStatsTxt(){
 }
 
 function dessinerStatsRef(){
-	ctx_ref.fillStyle = '#0000FF33';
+
+	ctx_ref.fillStyle = '#FFFFFF';
+	ctx_ref.fillRect(0,0,cnv_W,bar_H);
+
+
+	var empty_letters = getUnassignedLetters();
 	for(var i=0;i<26;i++){
-		var h = freq_ref[i]*bar_H;
+		ctx_ref.fillStyle = '#0000FF33';
+		if(empty_letters.indexOf(ref_stats[i]['car'])<0){
+			ctx_ref.fillStyle = '#0000FF11';
+		}
+		var h = ref_stats[i]['n']*bar_H;
 		ctx_ref.fillRect(i*(bar_W+bar_SP),bar_H-h,bar_W,h);
 	}
 }
@@ -148,6 +182,11 @@ function decrypter(){
 
 function updateInput(){
 	dessinerStatsTxt();
+	dessinerStatsRef();
+	$('#span_lettres_vides').text(getUnassignedLetters());
+}
+
+function getUnassignedLetters(){
 	var txt_out = '';
 	for(var c=0;c<26;c++){
 		var found = false;
@@ -160,5 +199,5 @@ function updateInput(){
 			txt_out += num2car(c);
 		}
 	}
-	$('#span_lettres_vides').text(txt_out);
+	return txt_out;
 }

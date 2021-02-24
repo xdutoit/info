@@ -73,6 +73,11 @@ var freq_ref = [
 0.005,
 0.002
 ];
+normaliserMax(freq_ref);
+
+function getFreqRef(i){
+	return freq_ref[i];
+}
 
 function creerAlphabet(){
 	var tab = [];
