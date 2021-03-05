@@ -1,6 +1,5 @@
 .clair{
 	color: #00b894;
-
 }
 .crypte{
 	color: #e17055;
@@ -21,4 +20,13 @@
 }
 #alpha_sub input{
 	width: 12px;
+}
+.rsa_warning{
+ border: 2px solid #f00;
+ background-color: #fcc;
+ color: #f00;
+ font-weight: bold;
+ padding: 5px;
+ border-radius: 10px;
+ text-align: center;
 }
