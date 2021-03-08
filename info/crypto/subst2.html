@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Substitution monoalphabétique: décryptage/attaque</title>
+	<meta charset="utf-8" />
+	<link rel="stylesheet" href="../style/github.css">
+	<link rel="stylesheet" href="../style/crypto.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script>
+	if(!window.jQuery){
+		document.write('<script src="../script/jquery-3.5.1.min.js"><\/script>');
+	}
+	</script>
+	<script src="../script/crypto_utils.js"></script>
+	<script src="../script/subst2.js"></script>
+</head>
+<body>
+	<div id="main_container" class="all_center">
+		<div><textarea id="ta_in" rows="8" cols="80" class="fond_crypte"></textarea></div>
+		<div id="alpha_sub"><br/>lettres non-assignées:<span id="span_lettres_vides"></span><br/><button id="btn_reset">effacer</button><button id="btn_decrypt">décrypter</button></div>
+		<div>
+			<span style="font-weight: bold; color:#99f;"> Fréquence des lettres de la langue française</span><br/>
+			<canvas id="cnv_stats_ref" width=600 height=130></canvas>
+		</div>
+		<div>
+			<span style="font-weight: bold; color:#f99;"> Fréquence des lettres du texte à déchiffrer</span><br/>
+			<canvas id="cnv_stats_txt" width=600 height=130></canvas>
+		</div>
+		<div><div id="div_out"></div></div>
+	</div>
+</body>
+</html>
