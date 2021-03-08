@@ -16,11 +16,29 @@
 </head>
 <body>
 	<div id="main_container">
- <span id="sp_primes"></span>
+  <div class="rsa_warning">Les clés générées ici ne doivent jamais servir à crypter des textes sensibles !<br/> (il s'agit d'une démonstration avec des nombres très petits)</div>
+  <h1>Création de clé</h1>
+  <h2>Liste de nombres premiers inférieurs à 1000</h2>
+  <div>
+   <span id="sp_primes"></span>
+  </div>
+  <h2>Création de clé</h2>
 		<div>
    Entrez deux nombres premiers:<br/>
-   p=<input id="inp_p" size="1"><br/>
-   q=<input id="inp_q" size="1">
+   p=<input id="inp_p" size="1">&nbsp;
+   q=<input id="inp_q" size="1"><br/>
+   <button id="btn_gen_cle">générer clé</button>
+  </div>
+  <div>
+   p = <span id="sp_p"></span><br/>
+   q = <span id="sp_q"></span><br/>
+   n = p*q = <span id="sp_n"></span><br/>
+   &phi; = (p-1)*(q-1) = <span id="sp_phi"></span><br/>
+   e = <span id="sp_e"></span><br/>
+   d = <span id="sp_d"></span><br/>
+   <br/>
+   <strong>Clé privée:</strong> (n,d) = <span id="sp_clePriv"></span><br/>
+   <strong>Clé publique:</strong> (n,e) = <span id="sp_clePub"></span><br/>
   </div>
 	</div>
 </body>
