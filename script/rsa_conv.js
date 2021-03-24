@@ -41,7 +41,12 @@ function num2txt(){
     txt += ' ';
    }
    else{
-    txt += num2car(nbs_arr_val[i]-1);
+    if(nbs_arr_val[i]<=26){
+     txt += num2car(nbs_arr_val[i]-1);
+    }
+    else{
+     txt += '_';
+    }
    }
   }
   $('#ta_txt').val(txt);

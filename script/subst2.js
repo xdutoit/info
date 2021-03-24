@@ -10,6 +10,7 @@ var bar_SP = Math.floor(cnv_W-26*bar_W)/25; // espace entre deux barres
 var alphabet = [];
 
 var freq_txt = [];
+var freq_ref = getFreqRefNorm();
 
 var txt_stats = [];
 var ref_stats = [];
@@ -42,7 +43,6 @@ $(function(){
 	}
 
 	// créer tableau alphabet
-	normaliserMax(freq_ref);
 	creerTableau();
 	alphabet = creerAlphabet();
 	dessinerStatsRef();

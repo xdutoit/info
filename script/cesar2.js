@@ -10,6 +10,7 @@ var bar_SP = Math.floor(cnv_W-26*bar_W)/25; // espace entre deux barres
 var alphabet = [];
 
 var freq_txt = [];
+var freq_ref = getFreqRefNorm();
 
 
 $(function(){
@@ -32,10 +33,6 @@ $(function(){
 	for(var i=0;i<26;i++){
 		freq_txt.push(0)
 	}
-
-	// normalize freq_ref
-	normaliserMax(freq_ref);
-
 
 	// event listener
 	$('#ta_in').on('keyup',calculerStats);
