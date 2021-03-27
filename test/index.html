@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+	<meta charset="utf-8">
+	<title>JS et sauvegarde</title>
+	<script>
+	function getVal(){
+		return document.getElementById('valeur').value;
+	}
+	function set_cook(){
+		document.cookie= "val="+getVal();
+	}
+
+	function get_cook(){
+		console.log(document.cookie);
+	}
+	function set_ls(){
+		localStorage.setItem('a',getVal());
+	}
+
+	function get_ls(){
+		console.log(localStorage.getItem('a'));
+	}
+	function dl_file(){
+		download('jsdl.txt',getVal());
+
+	}
+	function download(filename, text) {
+		// src: https://www.bitdegree.org/learn/javascript-download
+		var element = document.createElement('a');
+		element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+		element.setAttribute('download', filename);
+
+		element.style.display = 'none';
+		document.body.appendChild(element);
+
+		element.click();
+
+		document.body.removeChild(element);
+	}
+	function ul_file(e){
+		// src: https://stackoverflow.com/questions/3582671/how-to-open-a-local-disk-file-with-javascript
+		var file = e.target.files[0];
+		if (!file) {
+			return;
+		}
+		var reader = new FileReader();
+		reader.onload = function(e) {
+			var contents = e.target.result;
+			console.log(contents);
+		};
+		reader.readAsText(file);
+	}
+	window.onload = function(){
+		document.getElementById('inp_file').addEventListener('change', ul_file, false);
+	};
+</script>
+</head>
+<body>
+	<input id="valeur">
+	<table>
+		<tr>
+			<td>cookie</td>
+			<td><button onclick="set_cook()">set</button></td>
+			<td><button onclick="get_cook()">get</button></td>
+		</tr>
+		<tr>
+			<td>localstorage</td>
+			<td><button onclick="set_ls()">set</button></td>
+			<td><button onclick="get_ls()">get</button></td>
+		</tr>
+		<tr>
+			<td>fichier</td>
+			<td><button onclick="dl_file()">download</button></td>
+			<td><input type="file" id="inp_file"></td>
+		</tr>
+	</table>
+</body>
+</html>
