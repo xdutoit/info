@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+	<meta charset="utf-8">
+	<title>Page (mal) sécurisée</title>
+	<link rel="stylesheet" href="style/reseaux.css">
+	<script>
+	let data = [
+		{id:0,prenom:'Guy',nom:'Liguili',naissance:'23.05.2001',code:1443},
+		{id:1,prenom:'Sophie',nom:'Phonfec',naissance:'07.06.1997',code:8876},
+		{id:2,prenom:'Yves',nom:'Remors',naissance:'12.02.1979',code:5433}
+	];
+	window.onload = function(){
+		let params = new URLSearchParams(location.search);
+		if (params.has('id')){
+			let id = params.get('id');
+			for(let i=0;i<data.length;i++){
+				if(data[i]['id']==id){
+					for(let key in data[i]){
+						document.querySelector('#sp_'+key).innerHTML = data[i][key];
+					}
+				}
+			}
+		}
+	}
+	</script>
+</head>
+<body>
+	<table>
+		<tr>
+			<th>ID:</th>
+			<td><span id="sp_id"></span></td>
+		</tr>
+		<tr>
+			<th>Nom:</th>
+			<td><span id="sp_nom"></span></td>
+		</tr>
+		<tr>
+			<th>Prénom:</th>
+			<td><span id="sp_prenom"></span></td>
+		</tr>
+		<tr>
+			<th>Date de naissance:</th>
+			<td><span id="sp_naissance"></span></td>
+		</tr>
+		<tr>
+			<th>Code:</th>
+			<td><span id="sp_code"></span></td>
+		</tr>
+	</table>
+
+</body>
