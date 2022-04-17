@@ -17,7 +17,11 @@
 <body>
 	<div id="main_container" class="all_center">
 		<div><textarea id="ta_in" rows="8" cols="80" class="fond_crypte"></textarea></div>
-		<div id="alpha_sub"><br/>lettres non-assignées:<span id="span_lettres_vides"></span><br/><button id="btn_reset">effacer</button><button id="btn_decrypt">décrypter</button></div>
+		<div id="alpha_sub"><br/>lettres non-assignées:<span id="span_lettres_vides"></span><br/>
+			<button id="btn_reset" title="efface tous les caractères déjà entrés">effacer la clé</button><br/>
+			<button id="btn_cle_load" title="remplit les cases d'après une clé sauvegardée">charger une clé</button><br/>
+			<button id="btn_decrypt">décrypter</button><br/>
+		</div>
 		<div>
 			<span style="font-weight: bold; color:#99f;"> Fréquence des lettres de la langue française</span><br/>
 			<canvas id="cnv_stats_ref" width=600 height=130></canvas>
@@ -27,6 +31,10 @@
 			<canvas id="cnv_stats_txt" width=600 height=130></canvas>
 		</div>
 		<div><div id="div_out"></div></div>
+		<div>
+			clé de dechiffrement:
+			<span id="sp_cle_dechiffr">(appuyez sur "décrypter")</span><br/>
+			<button id="btn_cle_copy">copier la clé</button></div>
 		<div class="petit centre">
 			(source des statistiques: <a href="https://www.apprendre-en-ligne.net/crypto/stat/francais.html" target="_blank">https://www.apprendre-en-ligne.net/crypto/stat/francais.html</a>)
 		</div>

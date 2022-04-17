@@ -1,25 +1,25 @@
 .clair{
-	color: #00b894;
+    color: #00b894;
 }
 .crypte{
-	color: #e17055;
+    color: #e17055;
 }
 .fond_clair{
-	background-color: #00b89466;
+    background-color: #00b89466;
 
 }
 .fond_crypte{
-	background-color: #e1705566;
+    background-color: #e1705566;
 }
 #alpha_sub table{
-	margin: 0px auto;
-	border-collapse: collapse;
+    margin: 0px auto;
+    border-collapse: collapse;
 }
 #alpha_sub td{
-	border: 1px solid black;
+    border: 1px solid black;
 }
 #alpha_sub input{
-	width: 12px;
+    width: 12px;
 }
 .rsa_warning{
  border: 2px solid #f00;
@@ -31,8 +31,34 @@
  text-align: center;
 }
 .centre{
-	text-align: center;
+    text-align: center;
 }
 .petit{
-	font-size: 70%;
+    font-size: 70%;
+}
+.div_rsa_cle{
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+.div_rsa_cle>h1{
+    text-align: left;
+    font-size: 110%;
+    border: none;
+}
+#div_rsa_cle_input{
+    border: 1px solid #CCCCCC;
+    background-color: #DDDDDD;
+}
+#div_rsa_cle_calculs{
+    border: 1px solid #ccf;
+    background-color: #ddf;
+}
+#div_rsa_cle_priv{
+    border: 1px solid #fcc;
+    background-color: #fdd;
+}
+#div_rsa_cle_pub{
+    border: 1px solid #cfc;
+    background-color: #dfd;
 }
