@@ -62,3 +62,7 @@
     border: 1px solid #cfc;
     background-color: #dfd;
 }
+#div_out{
+    font-family: monospace;
+    font-size: 110%;
+}
