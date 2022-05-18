@@ -208,6 +208,7 @@ function chargerCle(){
                 $('#inp_car_'+i).val(cle_dechiffr.charAt(i));
             }
         }
+        updateInput();
     }
     else{
         alert('clé invalide (ne fait pas 26 caractères)');
@@ -215,6 +216,11 @@ function chargerCle(){
 }
 
 function updateInput(){
+
+    for(let i=0;i<26;i++){
+        $('#inp_car_'+i).val($('#inp_car_'+i).val().toLowerCase());
+    }
+
     dessinerStatsTxt();
     dessinerStatsRef();
     $('#span_lettres_vides').text(getUnassignedLetters());
