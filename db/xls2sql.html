@@ -13,7 +13,16 @@
             <textarea name="ta_in" id="ta_in" cols="30" rows="10"></textarea>
         </div>
         <div>
-            <button id="btn_convert">convertir</button>
+            <button id="btn_convert_auto">convertir en détectant automatiquement les types</button>
+        </div>
+        <div>OU</div>
+        <div>
+            préciser quelles colonnes sont de type numérique:
+            <table>
+                <tr id="tr_colnums"></tr>
+                <tr id="tr_inputs"></tr>
+            </table>
+            <button id="btn_convert_man">convertir suivant les types précisés</button>
         </div>
         <div>
             <textarea name="ta_out" id="ta_out" cols="30" rows="10"></textarea>
