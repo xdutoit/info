@@ -7,22 +7,31 @@
 	<script src="../script/xls2sql.js"></script>
 </head>
 <body>
-	<div id="main_container" class="all_center">
+	<div id="main_container">
         <div>
-            collez ici les données depuis excel:<br>
+            1) collez ici les données depuis excel:<br>
             <textarea name="ta_in" id="ta_in" cols="30" rows="10"></textarea>
+            Les dates collées ici doivent être:
+            <ul>
+                <li>soit au format excel: 'JJ.MM.AAAA'</li>
+                <li>soit au format SQL: 'AAAA-MM-JJ'</li>
+            </ul>
         </div>
         <div>
-            <button id="btn_convert_auto">convertir en détectant automatiquement les types</button>
+            2) <button id="btn_detect">détecter les types</button> (se fait automatiquement si vous collez des données puis cliquez en-dehors de la zone de texte)
         </div>
-        <div>OU</div>
         <div>
-            préciser quelles colonnes sont de type numérique:
+            3) Corrigez éventuellement les types des colonnes:<br>
             <table>
-                <tr id="tr_colnums"></tr>
+                <tr id="tr_colnums">
+                    <td>collez des données et cliquez sur "détecter les types"</td>
+                </tr>
                 <tr id="tr_inputs"></tr>
             </table>
-            <button id="btn_convert_man">convertir suivant les types précisés</button>
+            (choisir 'texte' si une date est déjà au format 'AAAA-MM-JJ')
+        </div>
+        <div>
+            4) <button id="btn_convert">convertir en SQL</button>
         </div>
         <div>
             <textarea name="ta_out" id="ta_out" cols="30" rows="10"></textarea>
