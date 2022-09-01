@@ -160,6 +160,9 @@ function convert(){
             if(type==DATE){
                 data = convertDate(data);
             }
+            if(type==TXT){
+                data = data.replace(/'/g,"''");
+            }
             str_out += sep+quote+data+quote;
             sep = ', ';
         }
