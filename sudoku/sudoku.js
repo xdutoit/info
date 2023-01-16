@@ -14,6 +14,7 @@ $(function(){
  
  // bouton
  $('#solve').click(solve);
+ $('#reset').click(reset);
  
  // remplissage tableau
  
@@ -84,6 +85,14 @@ $(function(){
  $('.lin_8.col_7').val(5);
  // */
 });
+
+function reset(){
+    for(let i=0;i<9;i++){
+        for(let j=0;j<9;j++){
+            $('.lin_'+i+'.col_'+j).val('');
+        }
+    }
+}
 
 function solve(){
 	$('.newSol').removeClass('newSol');
