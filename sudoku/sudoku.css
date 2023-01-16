@@ -1,0 +1,17 @@
+table, tr, td{
+ border: 1px solid black;
+ border-collapse: collapse;
+}
+input{
+ width: 10px;
+ height: 10px;
+ text-align: center;
+ margin: 2px;
+}
+.tdgr{
+ background-color: #CCC;
+}
+.newSol{
+	color: red;
+ background-color: #FCC;
+}
