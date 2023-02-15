@@ -131,7 +131,7 @@ function solve(){
                 }
                 if(numPot==1){
                     let coords = getCoords(elems[pot]);
-                    document.querySelector('#txt_out').innerHTML += getColumnLetter(coords[0]+1)+(coords[1]+1)+" : "+(n+1)+" (seul endroit où mettre un "+(n+1)+" "+sel2[t]+")<br>";
+                    document.querySelector('#txt_out').innerHTML += getColumnLetter(coords[0]+1)+(coords[1]+1)+" : "+(n+1)+" (seul endroit où mettre un "+(n+1)+" dans "+sel2[t]+")<br>";
                     elems[pot].value = n+1;
                     elems[pot].classList.add('newSol');
                 }
