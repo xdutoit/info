@@ -1,15 +1,15 @@
 table, tr, td, th{
- border: 1px solid black;
- border-collapse: collapse;
+	border: 1px solid black;
+	border-collapse: collapse;
 }
 th{
 	padding: 0px 5px;
 }
 input{
- width: 10px;
- height: 10px;
- text-align: center;
- margin: 2px;
+	width: 10px;
+	height: 10px;
+	text-align: center;
+	margin: 2px;
 }
 .tdgr{
  background-color: #CCC;
