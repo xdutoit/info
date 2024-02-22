@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+	<link rel="stylesheet" href="../style/github.css">
+	<link rel="stylesheet" href="../style/crypto.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RSA/PGP: déchiffrement et vérification</title>
+    <script src="../script/openpgp.min.js"></script>
+    <script src="../script/pgp.js"></script>
+    <script>
+        window.onload = function(){
+            document.querySelector('#btnPgpD2DechiffrerVerfier').addEventListener('click',dechiffrerVerifier);
+            document.querySelector('#btnPgpD2TelechargerMsgClair').addEventListener('click',d2TelechargerMsg);
+        };
+    </script>
+</head>
+<body>
+	<div id="main_container">
+        <h1>Déchiffrement et vérification de message</h1>
+        <h2 class="pgpH2">Clé privée du destinataire:</h2>
+        <textarea name="taPgpD2ClePriv" id="taPgpD2ClePriv" class="taRoundBox pgpClePriv" cols="30" rows="10"></textarea>
+        <h2 class="pgpH2">Clé publique de l'expéditeur:</h2>
+        <textarea name="taPgpD2ClePub" id="taPgpD2ClePub" class="taRoundBox pgpClePub" cols="30" rows="10"></textarea>
+        <h2 class="pgpH2">Message chiffré:</h2>
+        <textarea name="taPgpD2MsgChiffr" id="taPgpD2MsgChiffr" class="taRoundBox fondChiffr"  cols="30" rows="10"></textarea>
+        <button id="btnPgpD2DechiffrerVerfier">déchiffrer et vérifier</button>
+        <h2 class="pgpH2">Message clair:</h2>
+        <textarea name="taPgpD2MsgClair" id="taPgpD2MsgClair" class="taRoundBox fondClair" cols="30" rows="10">cliquez sur "déchiffrer"</textarea>
+        <div id="pgpSignatureValide" class="pgpSignatureStatus pgpSignatureEMPTY">signature non vérifiée</div>
+        <button id="btnPgpD2TelechargerMsgClair">télécharger message clair et vérifié</button>
+    </div>
+</body>
+</html>

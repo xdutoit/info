@@ -60,6 +60,7 @@ $(function(){
     $('#btn_decrypt').on('click',decrypter);
     $('#btn_cle_load').on('click',chargerCle);
     $('#btn_cle_copy').on('click',copierCle);
+    $('#btn_txt_copy').on('click',copierTexteXLS);
 })
 
 function decFreq(a,b){
@@ -171,10 +172,10 @@ function decrypter(){
             html_out += ' ';
         }
         else if ($('#inp_car_'+car2num(car)).val()) {
-            html_out += '<span class="fond_clair">'+$('#inp_car_'+car2num(car)).val().toLowerCase()+'</span>';
+            html_out += '<span class="fondClair">'+$('#inp_car_'+car2num(car)).val().toLowerCase()+'</span>';
         }
         else{
-            html_out += '<span class="fond_crypte">'+car.toUpperCase()+'</span>';
+            html_out += '<span class="fondChiffr">'+car.toUpperCase()+'</span>';
         }
     }
 
@@ -194,9 +195,18 @@ function decrypter(){
 
 }
 
+function copierTexteXLS(){
+    let txtXls = document.querySelector('#div_out').textContent;
+    navigator.clipboard.writeText(txtXls);
+    document.querySelector('#ta_out_xls').value = txtXls;
+    document.querySelector('#ta_out_xls').style.display = 'block';
+    document.querySelector('#sp_msg_xls').style.display = 'block';
+    alert('texte copié dans le presse-papier !');
+}
+
 function copierCle(){
     navigator.clipboard.writeText($('#sp_cle_dechiffr').text());
-    alert('clé copiée dans le presse-papier !')
+    alert('clé copiée dans le presse-papier !');
 }
 
 function chargerCle(){

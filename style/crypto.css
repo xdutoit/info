@@ -4,11 +4,10 @@
 .crypte{
     color: #e17055;
 }
-.fond_clair{
+.fondClair{
     background-color: #00b89466;
-
 }
-.fond_crypte{
+.fondChiffr{
     background-color: #e1705566;
 }
 #alpha_sub table{
@@ -66,3 +65,41 @@
     font-family: monospace;
     font-size: 110%;
 }
+.pgpH2{
+    font-size: 110%;
+    font-weight: bold;
+}
+.taRoundBox {
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+.pgpClePriv{
+    border: 1px solid #faa;
+    background-color: #fdd
+}
+.pgpClePub{
+    border: 1px solid #afa;
+    background-color: #dfd;
+}
+.pgpSignatureStatus{
+    border-radius: 5px;
+    padding: 5px;
+}
+.pgpSignatureEMPTY{
+    border: 1px solid black;
+    background-color: #ccc;
+}
+.pgpSignatureOK{
+    border: 1px solid #0c0;
+    background-color: #cfc;
+    color: #090;
+    font-weight: bold;
+}
+.pgpSignatureNOK{
+    border: 1px solid #c00;
+    background-color: #fcc;
+    color: #f00;
+    font-weight: bold;
+}
+

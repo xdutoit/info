@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../style/github.css">
+    <link rel="stylesheet" href="../style/crypto.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RSA/PGP: création de clé</title>
+    <script src="../script/openpgp.min.js"></script>
+    <script src="../script/pgp.js"></script>
+    <script>
+        window.onload = function () {
+            document.querySelector('#btnCreerCles').addEventListener('click', creerCles);
+            document.querySelector('#btnTelechargerClePriv').addEventListener('click', telechargerClePriv);
+            document.querySelector('#btnTelechargerClePub').addEventListener('click', telechargerClePub);
+        };
+    </script>
+</head>
+
+<body>
+    <div id="main_container">
+        <h1>Création de paire de clés privée/publique</h1>
+        <button id="btnCreerCles">créer clés</button><br>
+        <h2 class="pgpH2">Clé privée</h2>
+        <textarea name="taPgpClePriv" id="taPgpClePriv" class="taRoundBox" cols="30" rows="10">cliquez sur "créer clés"</textarea>
+        <h2 class="pgpH2">Clé publique</h2>
+        <textarea name="taPgpClePub" id="taPgpClePub" class="taRoundBox" cols="30" rows="10">cliquez sur "créer clés"</textarea>
+        <button id="btnTelechargerClePriv">télécharger clé privée</button>
+        <button id="btnTelechargerClePub">télécharger clé publique</button>
+    </div>
+</body>
+
+</html>

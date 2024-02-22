@@ -16,7 +16,7 @@
 </head>
 <body>
 	<div id="main_container" class="all_center">
-		<div><textarea id="ta_in" rows="8" cols="80" class="fond_crypte"></textarea></div>
+		<div><textarea id="ta_in" rows="8" cols="80" class="fondChiffr"></textarea></div>
 		<div id="alpha_sub"><br/>lettres non-assignées:<span id="span_lettres_vides"></span><br/>
 			<button id="btn_reset" title="efface tous les caractères déjà entrés">effacer la clé</button><br/>
 			<button id="btn_cle_load" title="remplit les cases d'après une clé sauvegardée">charger une clé</button><br/>
@@ -30,11 +30,17 @@
 			<span style="font-weight: bold; color:#f99;"> Fréquence des lettres du texte à déchiffrer</span><br/>
 			<canvas id="cnv_stats_txt" width=600 height=130></canvas>
 		</div>
-		<div><div id="div_out"></div></div>
+		<div>
+			<div id="div_out"></div>
+			<button id="btn_txt_copy">copier le texte (pour l'insérer dans Excel)</button><br><br>
+			<span id="sp_msg_xls" style="display: none;">le texte ci-dessous a été copié dans le presse-papier:</span>
+			<textarea id="ta_out_xls" rows="8" cols="80" style="display:none;"></textarea>
+		</div>
 		<div>
 			clé de dechiffrement:
 			<span id="sp_cle_dechiffr">(appuyez sur "déchiffrer")</span><br/>
-			<button id="btn_cle_copy">copier la clé</button></div>
+			<button id="btn_cle_copy">copier la clé</button>
+		</div>
 		<div class="petit centre">
 			(source des statistiques: <a href="https://www.apprendre-en-ligne.net/crypto/stat/francais.html" target="_blank">https://www.apprendre-en-ligne.net/crypto/stat/francais.html</a>)
 		</div>

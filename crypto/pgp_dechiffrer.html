@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+	<link rel="stylesheet" href="../style/github.css">
+	<link rel="stylesheet" href="../style/crypto.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RSA/PGP: déchiffrement</title>
+    <script src="../script/openpgp.min.js"></script>
+    <script src="../script/pgp.js"></script>
+    <script>
+        window.onload = function(){
+            document.querySelector('#btnPgpD1Dechiffrer').addEventListener('click',dechiffrer);
+            document.querySelector('#btnPgpD1TelechargerMsgClair').addEventListener('click',d1TelechargerMsg);
+        };
+    </script>
+</head>
+<body>
+	<div id="main_container">
+        <h1>Déchiffrement de message (sans vérification)</h1>
+        <h2 class="pgpH2">Clé privée du destinataire:</h2>
+        <textarea name="taPgpD1ClePriv" id="taPgpD1ClePriv" class="taRoundBox pgpClePriv" cols="30" rows="10"></textarea>
+        <h2 class="pgpH2">Message chiffré:</h2>
+        <textarea name="taPgpD1MsgChiffr" id="taPgpD1MsgChiffr" class="taRoundBox fondChiffr"  cols="30" rows="10"></textarea>
+        <button id="btnPgpD1Dechiffrer">déchiffrer</button>
+        <h2 class="pgpH2">Message clair:</h2>
+        <textarea name="taPgpD1MsgClair" id="taPgpD1MsgClair" class="taRoundBox fondClair" cols="30" rows="10">cliquez sur "déchiffrer"</textarea>
+        <button id="btnPgpD1TelechargerMsgClair">télécharger message clair</button>
+    </div>
+</body>
+</html>

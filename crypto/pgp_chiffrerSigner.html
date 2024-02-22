@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+	<link rel="stylesheet" href="../style/github.css">
+	<link rel="stylesheet" href="../style/crypto.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RSA/PGP: chiffrement + signature</title>
+    <script src="../script/openpgp.min.js"></script>
+    <script src="../script/pgp.js"></script>
+    <script>
+        window.onload = function(){
+            document.querySelector('#btnPgpC2ChiffrerSigner').addEventListener('click',chiffrerSigner);
+            document.querySelector('#btnPgpC2TelechargerMsgChiffrSign').addEventListener('click',c2TelechargerMsg);
+        };
+    </script>
+</head>
+<body>
+	<div id="main_container">
+        <h1>Chiffrement et signature de message</h1>
+        <h2 class="pgpH2">Clé publique du destinataire:</h2>
+        <textarea name="taPgpC2ClePub" id="taPgpC2ClePub" class="taRoundBox pgpClePub" cols="30" rows="10"></textarea>
+        <h2 class="pgpH2">Clé privée de l'expéditeur:</h2>
+        <textarea name="taPgpC2ClePriv" id="taPgpC2ClePriv" class="taRoundBox pgpClePriv" cols="30" rows="10"></textarea>
+        <h2 class="pgpH2">Message clair:</h2>
+        <textarea name="taPgpC2MsgClair" id="taPgpC2MsgClair" class="taRoundBox fondClair"  cols="30" rows="10"></textarea>
+        <button id="btnPgpC2ChiffrerSigner">chiffrer et signer</button>
+        <h2 class="pgpH2">Message chiffré et signé:</h2>
+        <textarea name="taPgpC2MsgChiffrSign" id="taPgpC2MsgChiffrSign" class="taRoundBox fondChiffr" cols="30" rows="10">cliquez sur "chiffrer et signer"</textarea>
+        <button id="btnPgpC2TelechargerMsgChiffrSign">télécharger message chiffré et signé</button>
+    </div>
+</body>
+</html>
